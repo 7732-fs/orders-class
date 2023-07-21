@@ -8,5 +8,13 @@ def setup(filename="orders.sqlite"):
         cur.execute("CREATE TABLE IF NOT EXISTS orders(id INTEGER PRIMARY KEY, customer_id INT, license_number TEXT, date TEXT, wash_type TEXT, car_type TEXT, price TEXT, FOREIGN KEY (customer_id) REFERENCES customers(id))")
         conn.commit()
 
-    
-setup()
+def query_db(sql, filename="orders.sqlite"):
+     with sqlite3.connect(filename) as conn:
+        cur=conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        return cur.fetchall()
+
+
+#setup()
+# orders=query_db("select * from orders")
