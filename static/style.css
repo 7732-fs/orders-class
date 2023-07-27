@@ -1,0 +1,29 @@
+* {
+    border: 1px solid black;
+}
+
+.order {
+    display: flex;
+    gap: 2%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    align-items: center;
+}
+
+.order > *{
+    width: 100%;
+}
+
+.title {
+    font-size: larger;
+    margin-bottom: 2%;
+}
+
+.delete {
+    background-color: yellow;
+    text-decoration: none;
+    box-shadow: 1px 1px black;
+    width: fit-content;
+    padding: 1vh;
+    border-radius: 40px;
+}

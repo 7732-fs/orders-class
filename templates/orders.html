@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <title>Car Wash</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body dir="rtl">
+    <div class="orders">
+        <div class="title">תור רחיצה לתאריך {{ date }} </div>
+        {% for order in orders %}
+        <div class="order">
+            <div class="company" style='background-color: {{ order["car_color"] }};'>{{ order["car_company"] }}</div>
+            <div class="license">{{ order["license_number"] }}</div>
+            <div class="date">{{ order["date"].split(' ')[1] }}</div>
+            <div class="wash_type">{{ order["wash_type"] }}</div>
+            <div class="car_type">{{ order["car_type"] }}</div>
+            <div class="price">{{ order["price"] }}</div>
+            <div class="delete"><a href="/delete?id={{ order['id'] }}">הסר</a></div>
+        </div>
+        {% endfor %}    
+    </div>
+</body>
+</html>
